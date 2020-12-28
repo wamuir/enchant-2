@@ -67,13 +67,13 @@ func TestLoadDictCheckAndSuggest(t *testing.T) {
 	// test suggest
 	s := "wowzers"
 	got := e.Suggest(s)
-	if len(got) != 6 {
-		t.Errorf("Expected %v suggestions for \"%v\", but got %v. Value is: %v", 6, s, len(got), got)
+	if len(got) <= 1 {
+		t.Errorf("Expected > 1 suggestions for \"%v\", but got %v. Value is: %v", s, len(got), got)
 	}
 
 	s = "lawn"
 	got = e.Suggest(s)
-	if len(got) != 14 {
-		t.Errorf("Expected %v suggestions for \"%v\", but got %v. Value is: %v", 6, s, len(got), got)
+	if len(got) <= 1 {
+		t.Errorf("Expected > 1 suggestions for \"%v\", but got %v. Value is: %v", s, len(got), got)
 	}
 }
